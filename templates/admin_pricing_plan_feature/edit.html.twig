@@ -1,0 +1,13 @@
+
+
+{% block title %}Edit PricingPlanFeature{% endblock %}
+
+{% block body %}
+    <h1>Edit PricingPlanFeature</h1>
+
+    {{ include('admin_pricing_plan_feature/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_admin_pricing_plan_feature_index') }}">back to list</a>
+
+    {{ include('admin_pricing_plan_feature/_delete_form.html.twig') }}
+{% endblock %}

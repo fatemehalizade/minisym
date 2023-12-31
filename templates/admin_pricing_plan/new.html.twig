@@ -1,0 +1,11 @@
+
+
+{% block title %}New PricingPlan{% endblock %}
+
+{% block body %}
+    <h1>Create new PricingPlan</h1>
+
+    {{ include('admin_pricing_plan/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_pricing_plan_index') }}">back to list</a>
+{% endblock %}

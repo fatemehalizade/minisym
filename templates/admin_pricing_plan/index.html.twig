@@ -1,0 +1,37 @@
+
+
+{% block title %}PricingPlan index{% endblock %}
+
+{% block body %}
+    <h1>PricingPlan index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pricing_plan in pricing_plans %}
+            <tr>
+                <td>{{ pricing_plan.id }}</td>
+                <td>{{ pricing_plan.name }}</td>
+                <td>{{ pricing_plan.price }}</td>
+                <td>
+                    <a href="{{ path('app_admin_pricing_plan_show', {'id': pricing_plan.id}) }}">show</a>
+                    <a href="{{ path('app_admin_pricing_plan_edit', {'id': pricing_plan.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_pricing_plan_new') }}">Create new</a>
+{% endblock %}
